@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 
+# ------ PART 1 ------
+
 df = pd.DataFrame(
     [
        {"command": "st.selectbox", "rating": 4, "is_widget": True},
@@ -11,7 +13,7 @@ df = pd.DataFrame(
 
 # Display text
 st.text('Fixed width text')
-st.markdown('_Markdown_') # see #*
+st.markdown('_**Markdown**_') # see #*
 st.caption('Balloons. Hundreds of them...')
 st.latex(r''' e^{i\pi} + 1 = 0 ''')
 st.write('Most objects') # df, err, func, keras!
@@ -58,6 +60,7 @@ st.download_button(
 st.camera_input("一二三,茄子!")
 st.color_picker('Pick a color')
 
+# ------ PART 2 ------
 
 data = pd.read_csv("employees.csv")
 
@@ -80,6 +83,7 @@ st.scatter_chart(data[:10])
 # Add sidebar
 a = st.sidebar.radio('Select one:', [1, 2])
 st.sidebar.caption("This is a cool caption")
+st.sidebar.image('./smile.png')
 
 # Add columns
 col1, col2 = st.columns(2)
