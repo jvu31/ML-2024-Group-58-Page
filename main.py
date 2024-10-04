@@ -92,6 +92,11 @@ st.write("""
 """)
 
 st.subheader('Gantt Chart')
+
+gantChart = pd.read_excel("C:\Users\shren\Downloads\MLGanttChart.xlsx")
+st.dataframe(gantChart)
+
+
 st.subheader('Contribution Table')
 st.data_editor(contributions, hide_index=True)
 st.divider()
