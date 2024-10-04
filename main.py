@@ -43,7 +43,7 @@ This [Star Dataset](https://www.kaggle.com/datasets/vinesmsuic/star-categorizati
 
 
 st.subheader('Problem Definition')
-st.write(":minus_sign:"*11)
+st.write("-"*11)
 st.write("Given that technology is advancing, more data and features of stellar bodies will become available. Instead of manually categorizing the data, we can automate the process and make it more consistent and efficient with machine learning methods. The problem is a binary classification: either a dwarf or giant star. Using various ML models related to binary classification, we will categorize the stars based on the relevant features in the dataset.")
 
 st.subheader('Methods')
@@ -89,7 +89,7 @@ st.write("""
 st.subheader('Gantt Chart')
 st.subheader('Contribution Table')
 st.data_editor(contributions, hide_index=True)
-st.dvider()
+st.divider()
 st.caption("Created by Jimmy Vu, Shrenik Koppaka, Carlos Aponte, Omikhosen Unuigboje, Jerry Song | © 2024 Star Classification Project")
 
 
