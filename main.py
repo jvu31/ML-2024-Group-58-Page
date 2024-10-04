@@ -20,7 +20,7 @@ st.header('CS 4641 - Fall 2024 - Group 58')
 st.subheader("[Project Github](https://github.com/Skoppaka9/ML-2024-Group-58)")
 
 st.subheader('Introduction/Background')
-st.write(":heavy_minus_sign:"*34)
+st.write(":heavy_minus_sign:"*14)
 st.write("Stellar classification is used by scientists to categorize stars based on their spectral characteristics (temperature, size, composition, color, brightness, and more). By classifying these stars, scientists can better understand them by analyzing their patterns and trends, which will hopefully provide us with more knowledge and insight into the universe.")
 st.write("""
 - Armstrong et al., “K2 variable catalogue – II. Machine learning classification of variable stars and eclipsing binaries in K2 fields 0–4”
@@ -43,6 +43,7 @@ This [Star Dataset](https://www.kaggle.com/datasets/vinesmsuic/star-categorizati
 
 
 st.subheader('Problem Definition')
+st.write(":minus_sign:"*11)
 st.write("Given that technology is advancing, more data and features of stellar bodies will become available. Instead of manually categorizing the data, we can automate the process and make it more consistent and efficient with machine learning methods. The problem is a binary classification: either a dwarf or giant star. Using various ML models related to binary classification, we will categorize the stars based on the relevant features in the dataset.")
 
 st.subheader('Methods')
@@ -88,5 +89,7 @@ st.write("""
 st.subheader('Gantt Chart')
 st.subheader('Contribution Table')
 st.data_editor(contributions, hide_index=True)
+st.dvider()
+st.caption("Created by Jimmy Vu, Shrenik Koppaka, Carlos Aponte, Omikhosen Unuigboje, Jerry Song | © 2024 Star Classification Project")
 
 
