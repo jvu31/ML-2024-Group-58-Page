@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
-
+import os
+print(os.getcwd())
 
 contributions = pd.DataFrame (
     [
@@ -93,7 +94,7 @@ st.write("""
 
 st.subheader('Gantt Chart')
 
-gantChart = pd.read_excel("C:\Users\shren\Desktop\ML-2024-Group-58-Page\MLGanttChart.xlsx")
+gantChart = pd.read_excel("ML-2024-Group-58-Page\MLGanttChart.xlsx")
 st.dataframe(gantChart)
 
 
