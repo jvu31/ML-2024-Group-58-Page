@@ -19,7 +19,7 @@ st.header('CS 4641 - Fall 2024 - Group 58')
 
 st.subheader('Introduction/Background')
 st.write(":heavy_minus_sign:"*14)
-st.write("Stellar classification is used by scientists to categorize stars based on their spectral characteristics (temperature, size, composition, color, brightness, and more). By classifying these stars, scientists can better understand them by analyzing their patterns and trends, which will provide us with more knowledge and insight into the universe.")
+st.write("Stellar classification is used by scientists to categorize stars based on their spectral characteristics (temperature, size, composition, color, brightness, etc.). By classifying these stars, scientists can better understand them by analyzing their patterns and trends, which will provide us with more knowledge and insight into the universe.")
 st.write('**Literature Review:**')
 st.write("""
 - Armstrong et al. utilized a combination of Kohonen Self-Organizing Maps (SOMs) and Random Forest as a new method for variable star classification [1]. SOMs were used to effectively parameterize light curve shapes while Random Forest were useful for their classification schemes, especially for larger data sets [1].   
