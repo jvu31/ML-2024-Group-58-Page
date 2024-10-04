@@ -54,11 +54,11 @@ st.write("""
 st.write(""" 
 **ML Models:**
 - Random Forest: Strong classification model shown by literature review; we want to test it with our dataset
-    \n**import RandomForestClassifier from sklearn.ensemble**
+    \n:green[**import RandomForestClassifier from sklearn.ensemble**]
 - KNN: A simple and good classification model for a low dimensionality, well-defined dataset
-    \n**import KNeighborsClassifier from sklearn.neighbors**
+    \n:green[**import KNeighborsClassifier from sklearn.neighbors**]
 - Logistic Regression: Useful for binary classification as it predicts whether a data point belongs to a category 
-    \n**import LogisticRegression from sklearn.linear_model**        
+    \n:green[**import LogisticRegression from sklearn.linear_model**]       
 """)
 
 st.subheader('(Potential) Results and Discussion')
