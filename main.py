@@ -5,21 +5,22 @@ import pandas as pd
 contributions = pd.DataFrame (
     [
         {"Name": "Jimmy", "Contributions": "Methods, Streamlit setup"},
-        {"Name": "Carlos", "Contributions": ""},
-        {"Name": "Omo", "Contributions": ""},
-        {"Name": "Shrenik", "Contributions": ""},
-        {"Name": "Jerry", "Contributions": ""}
+        {"Name": "Carlos", "Contributions": "Introduction, Problem Definition"},
+        {"Name": "Omo", "Contributions": "Literature Review"},
+        {"Name": "Shrenik", "Contributions": "Results & Discussion, Video"},
+        {"Name": "Jerry", "Contributions": "Gantt Chart"}
 
     ]
 )
-st.set_page_config(page_title='Star Classification Model', page_icon ="🌟", layout = "wide")
+st.set_page_config(page_title='Star Classification Model', page_icon ="🌟", layout = "centered")
 # Display text
 st.title('Star Classification Model')
 st.header('CS 4641 - Fall 2024 - Group 58')
 
-st.write("[Group58-ML-Github](https://github.com/Skoppaka9/ML-2024-Group-58)")
+st.subheader("[Project Github](https://github.com/Skoppaka9/ML-2024-Group-58)")
 
 st.subheader('Introduction/Background')
+st.write(":heavy_minus_sign:"*34)
 st.write("Stellar classification is used by scientists to categorize stars based on their spectral characteristics (temperature, size, composition, color, brightness, and more). By classifying these stars, scientists can better understand them by analyzing their patterns and trends, which will hopefully provide us with more knowledge and insight into the universe.")
 st.write("""
 - Armstrong et al., “K2 variable catalogue – II. Machine learning classification of variable stars and eclipsing binaries in K2 fields 0–4”
