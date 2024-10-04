@@ -92,9 +92,7 @@ st.write("""
 """)
 
 st.subheader('Gantt Chart')
-
-gantChart = pd.read_csv("MLGanttChart.csv")
-st.dataframe(gantChart)
+st.image("gantt.png")
 
 
 st.subheader('Contribution Table')
