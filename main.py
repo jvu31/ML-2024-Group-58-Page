@@ -20,10 +20,9 @@ st.header('CS 4641 - Fall 2024 - Group 58')
 st.header("[Project Github](https://github.com/Skoppaka9/ML-2024-Group-58)")
 
 st.header('Introduction/Background')
-st.write(":heavy_minus_sign:"*14)
+st.write(":heavy_minus_sign:"*17)
 st.write("Stellar classification is used by scientists to categorize stars based on their spectral characteristics (temperature, size, composition, color, brightness, and more). By classifying these stars, scientists can better understand them by analyzing their patterns and trends, which will hopefully provide us with more knowledge and insight into the universe.")
 st.subheader('Literature Review')
-st.write(":heavy_minus_sign:"*14)
 st.write("""
 - Armstrong et al., “K2 variable catalogue – II. Machine learning classification of variable stars and eclipsing binaries in K2 fields 0–4”
 Armstrong et al. utilize a combination of Kohonen Self-Organizing Maps (SOMs an unsupervised machine learning algorithm) and Random Forest as a new method for variable star classification [1]. SOMs were used to effectively parameterize light curve shapes while Random Forest were useful for their classification schemes especially for larger data sets [1].   
@@ -46,19 +45,19 @@ This [Star Dataset](https://www.kaggle.com/datasets/vinesmsuic/star-categorizati
 
 
 st.header('Problem Definition')
-st.write(":heavy_minus_sign:"*11)
+st.write(":heavy_minus_sign:"*18)
 st.write("Given that technology is advancing, more data and features of stellar bodies will become available. Instead of manually categorizing the data, we can automate the process and make it more consistent and efficient with machine learning methods. The problem is a binary classification: either a dwarf or giant star. Using various ML models related to binary classification, we will categorize the stars based on the relevant features in the dataset.")
 
 st.header('Methods')
 st.write(":heavy_minus_sign:"*6)
 st.write("""
-Preprocessing methods:
+**Preprocessing methods:**
 - Data Cleaning: Check for missing values/empty rows, remove duplicate rows, remove rows with high standard error, formatting, and splitting data into training and testing sets
 - Data Normalization (StandardScalar): Needed given that features can range from small to large value ranges; improves model's performance, accuracy, and stability
 - Data Transformation: Encoding categorical data into numeric values, one-hot encoding because spectral types have roman numerals
     """)
 st.write(""" 
-ML Models: 
+**ML Models:**
 - Random Forest: Effective for star classification problems as can be seen in the literature review, import RandomForestClassifier from sklearn.ensemble
 - KNN: A simple and good classification model for a low dimensionality, well-defined dataset, import KNeighborsClassifier from sklearn.neighbors
 - Logistic Regression: Useful for binary classification as it predicts whether a data point belongs to a category, import LogisticRegression from sklearn.linear_model        
