@@ -92,7 +92,7 @@ st.write("""
 
 st.subheader('Gantt Chart')
 
-gantChart = pd.read_excel("ML-2024-Group-58-Page\MLGanttChart.xlsx")
+gantChart = pd.read_excel("MLGanttChart.xlsx")
 st.dataframe(gantChart)
 
 
