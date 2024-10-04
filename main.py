@@ -12,15 +12,14 @@ contributions = pd.DataFrame (
 
     ]
 )
-st.set_page_config(page_title='Star Classification Model', page_icon ="🌟", layout = "centered")
+st.set_page_config(page_title='Star Classification Model', page_icon ="🌟", layout = "wide")
 # Display text
 st.title('Star Classification Model')
 st.header('CS 4641 - Fall 2024 - Group 58')
 
-
+st.write("[Group58-ML-Github](https://github.com/Skoppaka9/ML-2024-Group-58)")
 
 st.subheader('Introduction/Background')
-st.divider()
 st.write("Stellar classification is used by scientists to categorize stars based on their spectral characteristics (temperature, size, composition, color, brightness, and more). By classifying these stars, scientists can better understand them by analyzing their patterns and trends, which will hopefully provide us with more knowledge and insight into the universe.")
 st.write("""
 - Armstrong et al., “K2 variable catalogue – II. Machine learning classification of variable stars and eclipsing binaries in K2 fields 0–4”
@@ -43,11 +42,9 @@ This [Star Dataset](https://www.kaggle.com/datasets/vinesmsuic/star-categorizati
 
 
 st.subheader('Problem Definition')
-st.divider()
 st.write("Given that technology is advancing, more data and features of stellar bodies will become available. Instead of manually categorizing the data, we can automate the process and make it more consistent and efficient with machine learning methods. The problem is a binary classification: either a dwarf or giant star. Using various ML models related to binary classification, we will categorize the stars based on the relevant features in the dataset.")
 
 st.subheader('Methods')
-st.divider()
 st.write("""
 Preprocessing methods:
 - Dimensionality Reduction (PCA): relevant for identifying core features that have the biggest impact on classification
@@ -62,7 +59,6 @@ ML Models:
 """)
 
 st.subheader('(Potential) Results and Discussion')
-st.divider()
 st.write("""
 We plan to use accuracy, precision, and recall as our metrics to evaluate our model.
 
@@ -79,7 +75,6 @@ Each metric is expected to be at least 85% for our models, and we expect the ran
 """)
 
 st.subheader('References')
-st.divider()
 st.write("""
 [1] D. G. Armstrong et al., “K2 variable catalogue – II. Machine learning classification of variable stars and eclipsing binaries in K2 fields 0–4,” Monthly Notices of the Royal Astronomical Society, vol. 456, no. 2, pp. 2260–2272, Feb. 2016, doi: https://doi.org/10.1093/mnras/stv2836. 
 
@@ -90,9 +85,7 @@ st.write("""
 """)
 
 st.subheader('Gantt Chart')
-st.divider()
 st.subheader('Contribution Table')
-st.divider()
 st.data_editor(contributions, hide_index=True)
 
 
