@@ -34,7 +34,7 @@ st.write("""
 This [Star Dataset](https://www.kaggle.com/datasets/vinesmsuic/star-categorization-giants-and-dwarfs?select=Star9999_raw.csv) uses spectral data to distinguish whether a star is a dwarf or giant. 
 
 - The features are visual apparent magnitude, distance between star and earth, standard error of the distance, spectral type, absolute magnitude, and the target class (0 - Dwarf, 1- Giant)
-- The dataset has either 9,999/99,999 rows of raw data or 3642/39552 rows of preprocessed data. We can choose whether to use raw or preprocessed and more or less data points
+- The dataset has either 9,999/99,999 rows of raw data or 3642/39552 rows of preprocessed data. We can choose the type and how many data points we want.
 """)
 
 
