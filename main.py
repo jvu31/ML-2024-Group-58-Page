@@ -32,7 +32,7 @@ st.text("HDBScan: model that is able to scale with large datasets")
 st.text("KNN: good classification model for low dimensionality dataset")
 st.text("SVM: optimal for binary classification")
 st.subheader('(Potential) Results and Discussion')
-st.text("We plan to use accuracy, precision, and recall as our metrics to evaluate our model.
+st.text("We plan to use accuracy, precision, and recall as our metrics to evaluate our model.")
 
 st.text("Accuracy is one of the most important and useful metrics for a classification model, given that a data set is balanced, as it provides a quick and simple evaluation of the overall performance")
 
