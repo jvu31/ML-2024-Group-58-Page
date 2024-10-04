@@ -20,7 +20,7 @@ st.header('CS 4641 - Fall 2024 - Group 58')
 st.header("[Project Github](https://github.com/Skoppaka9/ML-2024-Group-58)")
 
 st.subheader('Introduction/Background')
-st.write(":heavy_minus_sign:"*13)
+st.write(":heavy_minus_sign:"*14)
 st.write("Stellar classification is used by scientists to categorize stars based on their spectral characteristics (temperature, size, composition, color, brightness, and more). By classifying these stars, scientists can better understand them by analyzing their patterns and trends, which will hopefully provide us with more knowledge and insight into the universe.")
 st.write('**Literature Review:**')
 st.write("""
@@ -56,11 +56,11 @@ st.write("""
 st.write(""" 
 **ML Models:**
 - Random Forest: Strong classification model shown by literature review; we want to test it with our dataset
-    **import RandomForestClassifier from sklearn.ensemble**
+    \n**import RandomForestClassifier from sklearn.ensemble**
 - KNN: A simple and good classification model for a low dimensionality, well-defined dataset
-    **import KNeighborsClassifier from sklearn.neighbors**
+    \n**import KNeighborsClassifier from sklearn.neighbors**
 - Logistic Regression: Useful for binary classification as it predicts whether a data point belongs to a category 
-    **import LogisticRegression from sklearn.linear_model**        
+    \n**import LogisticRegression from sklearn.linear_model**        
 """)
 
 st.subheader('(Potential) Results and Discussion')
@@ -68,15 +68,16 @@ st.write(":heavy_minus_sign:"*19)
 st.write("""
 We plan to use accuracy, precision, and recall as our metrics to evaluate our model.
 
-Accuracy is one of the most important and useful metrics for a classification model, given that a data set is balanced, as it provides a quick and simple evaluation of the overall performance 
+- Accuracy is one of the most important and useful metrics for a classification model, given that a data set is balanced, as it provides a quick and simple evaluation of the overall performance
 
-Precision refers to the proportion of true positive classified given what was classified as positive (true positives and false positives)
+- Precision refers to the proportion of true positive classified given what was classified as positive (true positives and false positives)
 
-Recall shows whether a model correctly identifies true positive instances given all the actual positive instances, which are true positives and false negatives. Recall and precision work well together to ensure that a model is able to identify positive instances and are precise in doing so.
+- Recall shows whether a model correctly identifies true positive instances given all the actual positive instances, which are true positives and false negatives. R
 
-Our goal is to implement various models and evaluate their performance using these metrics because they align with our models given our dataset and classification problem. 
+Recall and precision work well together to ensure that a model is able to identify positive instances and are precise in doing so. 
+         Accuracy is a helpful, standard metric, so a combination of these three metrics will help evaluate the performance of our algorithm given our dataset.
 
-Each metric is expected to be at least 85% for our models, and we expect the random forest model to perform the best.
+Each metric is expected to be at least 85% for our models, and we expect the random forest model to perform the best [3].
 
 """)
 
