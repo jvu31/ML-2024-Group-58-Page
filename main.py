@@ -12,9 +12,9 @@ contributions = pd.DataFrame (
 
     ]
 )
-st.set_page_config(page_title='Star Classification Model', page_icon ="🌟", layout = "centered")
+st.set_page_config(page_title='Star Classification Project', page_icon ="🌟", layout = "centered")
 # Display text
-st.title('Star Classification [Project Github](https://github.com/Skoppaka9/ML-2024-Group-58)')
+st.title('Star Classification Project [(Github)](https://github.com/Skoppaka9/ML-2024-Group-58)')
 st.header('CS 4641 - Fall 2024 - Group 58')
 
 st.subheader('Introduction/Background')
