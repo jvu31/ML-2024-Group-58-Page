@@ -47,9 +47,9 @@ st.subheader('Methods')
 st.write(":heavy_minus_sign:"*6)
 st.write("""
 **Preprocessing methods:**
-- Data Cleaning: Check for missing values/empty rows, remove duplicate rows, remove high-error rows, formatting, and splitting data into training and testing sets
-- Data Normalization (StandardScalar): Needed given that features can range from small to large value ranges, improves model's performance, accuracy, and stability
-- Data Transformation: Encoding categorical data into numerical values; we will use one-hot encoding because spectral types have roman numerals
+- Data Cleaning: Check for missing values/empty rows, remove duplicate rows, remove high-error rows, and formatting
+- Data Transformation: We will encode categorical data into numerical values because spectral types have roman numerals and normalize the data because features can range from small to large values
+- Data Splitting: Split the data into training and testing sets to evaluate our model's performance
     """)
 st.write(""" 
 **ML Models:**
