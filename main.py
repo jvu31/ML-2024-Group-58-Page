@@ -92,7 +92,7 @@ st.write("""
 """)
 
 st.subheader('Gantt Chart')
-st.image("gantt.png")
+st.image("gantt.png", caption="There is a zoom in feature near the top right corner.")
 
 
 st.subheader('Contribution Table')
