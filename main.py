@@ -93,8 +93,8 @@ st.write("""
 
 st.subheader('Gantt Chart')
 
-# gantChart = pd.read_excel("MLGanttChart.xlsx")
-# st.dataframe(gantChart)
+gantChart = pd.read_csv("MLGanttChart.csv")
+st.dataframe(gantChart)
 
 
 st.subheader('Contribution Table')
