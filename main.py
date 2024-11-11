@@ -70,13 +70,16 @@ st.write("""
 st.image('Images/Encoding.png', caption="Label Encoding")
 st.write("""
          We then dropped the 'Target Class' feature from our training data, otherwise we would be cheating, and assigned 'Target Class' values to our testing data. We then split our data into training and testing data with a 80/20 split, and we normalized the data using Standard Scaler so that we can identify true effects.
+         
          Normalizing the data is important because it allows the model to converge faster and prevents the model from being biased towards features with larger scales, and it helped improve the performance and stability of our model. 
             """)
 st.image('Images/Split-Normalize.png', caption="Splitting Data")
 st.write(""" 
 **ML Models:**
-- We used logistic regression for our first model because it is a relatively simple model that is good for binary classification. The model assumes that the data is linearly separable and that there is a linear relationship, so it serves as a simple, interpretable model for binary classification. 
+We used logistic regression for our first model because it is a relatively simple model that is good for binary classification. The model assumes that the data is linearly separable and that there is a linear relationship, so it serves as a simple, interpretable model for binary classification. 
+
 Logistic regression uses the sigmoid functions which handles the decision boundary, so that is why it is good for binary classification. Also, logistic regression is good for a dataset with fewer features and can be combined with regularization to prevent overfitting. 
+
 Since this is a relatively simple model to implement, we decided it would be good to use as our first model because it is simple to understand and will serve as a benchmark for future models.   
 """)
 st.image('Images/Model.png', caption="Logistic Regression")
@@ -97,23 +100,29 @@ st.write("""
          When we tried to remove the outliers in our dataset, we saw that our accuracy, precision, recall, and F1 all decreased. There are many possible explanations for this; one being that we might have removed outliers in the wrong way, especially for our specific data set.
 
          Our dataset can be considered as relatively small, so removing outliers results in less data points and training data for our model to use. Additionally, the outliers may have been informatiove data points that reflect importnat variability in the data, which could have influenced the decision boundary as well.
-         
+
          Outliers also represent edge cases or rare cases that are present in the real world, so removing them might make the model less generalizable to unseen data, especially if the outliers were meaningful data points.
          """)
 st.image("Images/Removing Outlier Results.png", caption = "Outlier Results")
 st.write("""
         Going off of the results of PCA, if we removed the 'Plx', 'e_Plx', and Spectral Type features from the dataset, we found that the our performance metrics only slightly decreased. Although there are slight changes in performance, we are decreaseing the dimensionality of our dataset by removing three features, and we are getting basically the same accuracy, precision, and recall.
+        
         This is good because it shows that our model is not relying on these features to make predictions, and it can still make accurate predictions without them.
          """)
 st.image("Images/Top 3 Components.png", caption = "PCA Results")
 st.write("""
         Finally, we wanted to see the differences in performance if we used label encoding compared to one hot encoding. We found that one hot encoding had a slightly lower precision score, but slightly higher f1 and recall score.
+        
         However, using one hot encoding makes the most sense because it is used for categorical features that are not ordinal or don't have an inheret ordering, and it is better for our model to train on. Therefore, moving forward, we will use a one-hot encoder for our data for other models to train on.
          """)
 st.image("Images/One Hot Encoder.png", caption = "One Hot Encoding Results")
 
 st.write("""
-        Overall, our model performed well as every metric was above 85%, and we were able to see how different preprocessing methods affected our model's performance. We can attribute the model's success to the nature of the classification and the data pre-processing. We only used the default parameters for logistic regression, so the results may not have been the best they could've been. Some next steps include using a grid search to optimize the hyperparameters and implementing other models in the same fashion to compare which model performs the best.
+        Overall, our model performed well as every metric was above 85%, and we were able to see how different preprocessing methods affected our model's performance. 
+         
+        We can attribute the model's success to the nature of the classification and the data pre-processing. We only used the default parameters for logistic regression, so the results may not have been the best they could've been. 
+         
+        Some next steps include using a grid search to optimize the hyperparameters and implementing other models in the same fashion to compare which model performs the best.
          """)
 
 
