@@ -46,7 +46,7 @@ st.subheader('Methods')
 st.write(":heavy_minus_sign:"*6)
 st.write("""
 **Preprocessing methods:**
-Our dataset was already preprocessed and pre-balanced. We still checked to see if there were any null or duplicated data in the dataset so that we could remove them, but we got zero for both. We also tried to check and remove outliers in our dataset by visualizing the features with box plots. Our attempt to remove outliers was by usingt the IQR method, 
+Our dataset was already preprocessed and pre-balanced. We still checked to see if there were any null or duplicated data in the dataset so that we could remove them, but we got zero for both. We also tried to check and remove outliers in our dataset by visualizing the features with box plots. Our attempt to remove outliers was by using the IQR method, 
          which can be seen in the code below:""")
 st.image('Images/Data Check.png')
 st.image('Images/Box Plot.png', caption="Box plot of the features in the dataset")
@@ -69,8 +69,8 @@ st.write("""
             """)
 st.image('Images/Encoding.png', caption="Label Encoding")
 st.write("""
-         We then dropped the 'Target Class' feature from our training data, otherwise we would be cheating, and assigned it to our testing data. We then split our data into training and testing data with a 80/20 split, and we normalized the data using Standard Scaler so that we can identify true effects.
-         Normalizing the data is important because it allows the model to converge faster and prevents the model from being biased towards features with larger scales, and it helped improve the performance of our model. 
+         We then dropped the 'Target Class' feature from our training data, otherwise we would be cheating, and assigned 'Target Class' values to our testing data. We then split our data into training and testing data with a 80/20 split, and we normalized the data using Standard Scaler so that we can identify true effects.
+         Normalizing the data is important because it allows the model to converge faster and prevents the model from being biased towards features with larger scales, and it helped improve the performance and stability of our model. 
             """)
 st.image('Images/Split-Normalize.png', caption="Splitting Data")
 st.write(""" 
@@ -90,7 +90,7 @@ As can be seen in the figure, we achieved
         - 87.02% Precision
         - 90.17% Recall
         - 88.57% F1 Score
-    Our confusion matrix can be seen below, as well, and it shows that our model did a relatiely good job idnetifying true positive and false negatives. Our model performed well because we used a balanced dataset, encoded the categorical features, and split and normalized the data. Logistic regression does well with binary classification, which is why we saw good results. We didn't see amazing results because logistic regression is one of the simpler models.
+    Our confusion matrix can be seen below, as well, and it shows that our model did a relatively good job identifying true positive and false negatives, around 3500 in both cases. Our model performed well because we used a balanced dataset, encoded the categorical features, and split and normalized the data. Logistic regression does well with binary classification, which is why we saw good results since that is what our dataset and problem is. We didn't see amazing results because logistic regression is one of the simpler models, and we only used the default parameters.
 """)
 st.image("Images/Normal Results.png", caption = "Basline Results")
 st.write("""
@@ -103,15 +103,15 @@ st.write("""
         Going off of the results of PCA, if we removed the 'Plx', 'e_Plx', and Spectral Type features from the dataset, we found that the our performance metrics only slightly decreased. Although there are slight changes in performance, we are decreaseing the dimensionality of our dataset by removing three features, and we are getting basically the same accuracy, precision, and recall.
         This is good because it shows that our model is not relying on these features to make predictions, and it can still make accurate predictions without them.
          """)
-st.image("Images/PCA.png", caption = "PCA Results")
+st.image("Images/Top 3 Components.png", caption = "PCA Results")
 st.write("""
-        Finally, we wanted to see the differences in performance if we used label encoding by one hot encoding. We found that one hot encoding had a slightly lower precision score, but slightly higher f1 and recall score.
-        However, using one hot encoding makes the most sense because it is used for categorical features that are not ordinal or don't have an inheret ordering, and it is better for our model to train on.
+        Finally, we wanted to see the differences in performance if we used label encoding compared to one hot encoding. We found that one hot encoding had a slightly lower precision score, but slightly higher f1 and recall score.
+        However, using one hot encoding makes the most sense because it is used for categorical features that are not ordinal or don't have an inheret ordering, and it is better for our model to train on. Therefore, moving forward, we will use a one-hot encoder for our data for other models to train on.
          """)
 st.image("Images/One Hot Encoder.png", caption = "One Hot Encoding Results")
 
 st.write("""
-        Overall, our model performed well as every metric was above 85%, and we were able to see how different preprocessing methods affected our model's performance. We only used the default parameters for logistic regression, so the results may not have been the best they could've been. Some next steps include using a grid serach to optimize the hyperparameters and implemengint other models in the same fashion to compare which model performs the best.
+        Overall, our model performed well as every metric was above 85%, and we were able to see how different preprocessing methods affected our model's performance. We can attribute the model's success to the nature of the classification and the data pre-processing. We only used the default parameters for logistic regression, so the results may not have been the best they could've been. Some next steps include using a grid search to optimize the hyperparameters and implementing other models in the same fashion to compare which model performs the best.
          """)
 
 
