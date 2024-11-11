@@ -130,7 +130,7 @@ st.write("""
          
         We can attribute the model's success to the nature of the classification and the data pre-processing. We only used the default parameters for logistic regression, so the results may not have been the best they could've been. 
          
-        Some next steps include using a grid search to optimize the hyperparameters and implementing other models in the same fashion to compare which model performs the best.
+        Some next steps include using a grid search to optimize the hyperparameters and implementing other models in the same fashion to compare which model performs the best. We can also use ensemble learning or boosting which incorporates multiple models.
          """)
 
 
