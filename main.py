@@ -85,21 +85,19 @@ st.subheader('Results and Discussion')
 st.write(":heavy_minus_sign:"*19)
 st.write("""
 In our proposal, we wanted each metric to be at least 85% for our models, and we achieved that with logistic regression. For our initial results, we tested not removing outliers, using all features, and using a label encoder. 
-As can be seen in the figure, we achieved 
-         <br>
-        - 88.36% Accuracy
-         <br>
-        - 87.02% Precision
-         <br>
-        - 90.17% Recall
-         <br>
-        - 88.57% F1 Score
-    Our confusion matrix can be seen below, as well, and it shows that our model did a relatively good job identifying true positive and false negatives, around 3500 in both cases. Our model performed well because we used a balanced dataset, encoded the categorical features, and split and normalized the data. Logistic regression does well with binary classification, which is why we saw good results since that is what our dataset and problem is. We didn't see amazing results because logistic regression is one of the simpler models, and we only used the default parameters.
+As can be seen in the figure, we achieved:""") 
+st.write("- 88.36% Accuracy")
+st.write("- 87.02% Precision")
+st.write("- 90.17% Recall")
+st.write("- 88.57% F1 Score")
+st.write("""Our confusion matrix can be seen below, as well, and it shows that our model did a relatively good job identifying true positive and false negatives, around 3500 in both cases. Our model performed well because we used a balanced dataset, encoded the categorical features, and split and normalized the data. Logistic regression does well with binary classification, which is why we saw good results since that is what our dataset and problem is. We didn't see amazing results because logistic regression is one of the simpler models, and we only used the default parameters.
 """)
 st.image("Images/Normal Results.png", caption = "Basline Results")
 st.write("""
          When we tried to remove the outliers in our dataset, we saw that our accuracy, precision, recall, and F1 all decreased. There are many possible explanations for this; one being that we might have removed outliers in the wrong way, especially for our specific data set.
+
          Our dataset can be considered as relatively small, so removing outliers results in less data points and training data for our model to use. Additionally, the outliers may have been informatiove data points that reflect importnat variability in the data, which could have influenced the decision boundary as well.
+         
          Outliers also represent edge cases or rare cases that are present in the real world, so removing them might make the model less generalizable to unseen data, especially if the outliers were meaningful data points.
          """)
 st.image("Images/Removing Outlier Results.png", caption = "Outlier Results")
