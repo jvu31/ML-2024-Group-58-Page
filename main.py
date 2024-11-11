@@ -47,9 +47,9 @@ st.write(":heavy_minus_sign:"*6)
 st.write("""
 **Preprocessing methods:**
 
-         Our dataset was already preprocessed and pre-balanced. 
-         
-         We still checked to see if there were any null or duplicated data in the dataset so that we could remove them, but we got zero for both. We also tried to check and remove outliers in our dataset by visualizing the features with box plots. Our attempt to remove outliers was by using the IQR method, 
+Our dataset was already preprocessed and pre-balanced. 
+  
+We still checked to see if there were any null or duplicated data in the dataset so that we could remove them, but we got zero for both. We also tried to check and remove outliers in our dataset by visualizing the features with box plots. Our attempt to remove outliers was by using the IQR method, 
          which can be seen in the code below:""")
 st.image('Images/Data Check.png')
 st.image('Images/Box Plot.png', caption="Box plot of the features in the dataset")
@@ -96,11 +96,12 @@ st.write("- 88.36% Accuracy")
 st.write("- 87.02% Precision")
 st.write("- 90.17% Recall")
 st.write("- 88.57% F1 Score")
-st.write("""Our confusion matrix can be seen below, as well, and it shows that our model did a relatively good job identifying true positive and false negatives, around 3500 in both cases. 
-         
-         Our model performed well because we used a balanced dataset, encoded the categorical features, and split and normalized the data. Logistic regression does well with binary classification, which is why we saw good results since that is what our dataset and problem is. 
-         
-         We didn't see amazing results because logistic regression is one of the simpler models, and we only used the default parameters.
+st.write("""
+Our confusion matrix can be seen below, as well, and it shows that our model did a relatively good job identifying true positive and false negatives, around 3500 in both cases. 
+             
+Our model performed well because we used a balanced dataset, encoded the categorical features, and split and normalized the data. Logistic regression does well with binary classification, which is why we saw good results since that is what our dataset and problem is. 
+          
+We didn't see amazing results because logistic regression is one of the simpler models, and we only used the default parameters.
 """)
 st.image("Images/Normal Results.png", caption = "Basline Results")
 st.write("""
