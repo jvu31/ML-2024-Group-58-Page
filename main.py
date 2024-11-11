@@ -56,7 +56,7 @@ st.image('Images/Box Plot.png', caption="Box plot of the features in the dataset
 st.image('Images/Removing Outliers.png', caption="Removing outliers using the IQR method")
 st.image('Images/Box Plot No Outliers.png', caption="Box Plot without outliers")
 st.write("""
-    We also plotted the graphs of each feature to see the correlations between them. The 'Plx' and 'e_Plx' features had what seems to be outliers and weird pattners, so we conducted PCA to see if we could reduce the dimensionality of the dataset.
+    We also plotted the graphs of each feature to see the correlations between them. The 'Plx' and 'e_Plx' features had what seems to be outliers and weird patterns, so we conducted PCA to see if we could reduce the dimensionality of the dataset.
         """)
 st.image('Images/pairplot.png', caption="Feature Plots")
 st.write("""
@@ -64,11 +64,11 @@ st.write("""
          """)
 st.image('Images/PCA.png', caption="PCA Variance")
 st.write("""
-    We also plotted a heatmap of feature correlations and saw that e_Plx and Plx had a high correlations with Vmag and Amag, respectively, so we wanted to see how our model's accuracy would be affected by removing these two features.
+    We also plotted a heatmap of feature correlations and saw that e_Plx and Plx had a high correlations with Vmag and Amag, respectively, so we wanted to see how our model's accuracy would be affected by removing these two features (e_Plx and Plx).
         """)
 st.image('Images/Feature Correlation.png', caption="Heatmap of Feature Correlations")
 st.write("""
-         Finally, we used a label encoder to encode the spectral type feature, which was a string, into a numerical value so that our model can train on it properly. We saw there was no significant differnce between using a label encoder or a one hot encoder, so we went with one hot encoder because it is used for categorical features that are not ordinal or don't have an inheret ordering.
+         Finally, we used a label encoder to encode the spectral type feature, which was a string, into a numerical value so that our model can train on it properly. We saw there was no significant difference between using a label encoder or a one hot encoder, so we went with one hot encoder because it is used for categorical features that are not ordinal or don't have an inheret ordering.
             """)
 st.image('Images/Encoding.png', caption="Label Encoding")
 st.write("""
@@ -107,7 +107,7 @@ st.image("Images/Normal Results.png", caption = "Basline Results")
 st.write("""
          When we tried to remove the outliers in our dataset, we saw that our accuracy, precision, recall, and F1 all decreased. There are many possible explanations for this; one being that we might have removed outliers in the wrong way, especially for our specific data set.
 
-         Our dataset can be considered as relatively small, so removing outliers results in less data points and training data for our model to use. Additionally, the outliers may have been informatiove data points that reflect importnat variability in the data, which could have influenced the decision boundary as well.
+         Our dataset can be considered as relatively small, so removing outliers results in less data points and training data for our model to use. Additionally, the outliers may have been informative data points that reflect important variability in the data, which could have influenced the decision boundary as well.
 
          Outliers also represent edge cases or rare cases that are present in the real world, so removing them might make the model less generalizable to unseen data, especially if the outliers were meaningful data points.
          """)
