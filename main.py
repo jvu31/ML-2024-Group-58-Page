@@ -86,9 +86,13 @@ st.write(":heavy_minus_sign:"*19)
 st.write("""
 In our proposal, we wanted each metric to be at least 85% for our models, and we achieved that with logistic regression. For our initial results, we tested not removing outliers, using all features, and using a label encoder. 
 As can be seen in the figure, we achieved 
+         <br>
         - 88.36% Accuracy
+         <br>
         - 87.02% Precision
+         <br>
         - 90.17% Recall
+         <br>
         - 88.57% F1 Score
     Our confusion matrix can be seen below, as well, and it shows that our model did a relatively good job identifying true positive and false negatives, around 3500 in both cases. Our model performed well because we used a balanced dataset, encoded the categorical features, and split and normalized the data. Logistic regression does well with binary classification, which is why we saw good results since that is what our dataset and problem is. We didn't see amazing results because logistic regression is one of the simpler models, and we only used the default parameters.
 """)
