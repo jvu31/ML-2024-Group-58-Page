@@ -4,12 +4,11 @@ import pandas as pd
 
 contributions = pd.DataFrame (
     [
-        {"Name": "Jimmy", "Contributions": "Methods, Streamlit setup"},
-        {"Name": "Carlos", "Contributions": "Introduction, Problem Definition"},
-        {"Name": "Omo", "Contributions": "Literature Review"},
-        {"Name": "Shrenik", "Contributions": "Results & Discussion, Video"},
-        {"Name": "Jerry", "Contributions": "Gantt Chart"}
-
+        {"Name": "Jimmy", "Contributions": "Pre-processing Data"},
+        {"Name": "Carlos", "Contributions": "Visualizing Data"},
+        {"Name": "Omo", "Contributions": "Pre-processing Data"},
+        {"Name": "Shrenik", "Contributions": "Model Implementation and Write-Up"},
+        {"Name": "Jerry", "Contributions": "Model Implementation and Write-Up"}
     ]
 )
 st.set_page_config(page_title='Star Classification Project', page_icon ="🌟", layout = "centered")
@@ -47,37 +46,74 @@ st.subheader('Methods')
 st.write(":heavy_minus_sign:"*6)
 st.write("""
 **Preprocessing methods:**
-- Data Cleaning: Check for missing values/empty rows, remove duplicate rows, remove high-error rows, and formatting
-- Data Transformation: We will encode categorical data into numerical values because spectral types have roman numerals and normalize the data because features can range from small to large values
-- Data Splitting: Split the data into training and testing sets to evaluate our model's performance
-    """)
+Our dataset was already preprocessed and pre-balanced. We still checked to see if there were any null or duplicated data in the dataset so that we could remove them, but we got zero for both. We also tried to check and remove outliers in our dataset by visualizing the features with box plots. Our attempt to remove outliers was by usingt the IQR method, 
+         which can be seen in the code below:""")
+st.image('Images/Data Check.png')
+st.image('Images/Box Plot.png', caption="Box plot of the features in the dataset")
+st.image('Images/Removing Outliers.png', caption="Removing outliers using the IQR method")
+st.image('Images/Box Plot No Outliers.png', caption="Box Plot without outliers")
+st.write("""
+    We also plotted the graphs of each feature to see the correlations between them. The 'Plx' and 'e_Plx' features had what seems to be outliers and weird pattners, so we conducted PCA to see if we could reduce the dimensionality of the dataset.
+        """)
+st.image('Images/pairplot.png', caption="Feature Plots")
+st.write("""
+    Conducting PCA, we were able to see the variance of each component, and as expected, 'Vmag', 'B-V', and 'Amag', comprised most of the variance, but 'Plx' and 'e_Plx' still had about 20% of the variance together.
+         """)
+st.image('Images/PCA.png', caption="PCA Variance")
+st.write("""
+    We also plotted a heatmap of feature correlations and saw that e_Plx and Plx had a high correlations with Vmag and Amag, respectively, so we wanted to see how our model's accuracy would be affected by removing these two features.
+        """)
+st.image('Images/Feature Correlation.png', caption="Heatmap of Feature Correlations")
+st.write("""
+         Finally, we used a label encoder to encode the spectral type feature, which was a string, into a numerical value so that our model can train on it properly. We saw there was no significant differnce between using a label encoder or a one hot encoder, so we went with one hot encoder because it is used for categorical features that are not ordinal or don't have an inheret ordering.
+            """)
+st.image('Images/Encoding.png', caption="Label Encoding")
+st.write("""
+         We then dropped the 'Target Class' feature from our training data, otherwise we would be cheating, and assigned it to our testing data. We then split our data into training and testing data with a 80/20 split, and we normalized the data using Standard Scaler so that we can identify true effects.
+         Normalizing the data is important because it allows the model to converge faster and prevents the model from being biased towards features with larger scales, and it helped improve the performance of our model. 
+            """)
+st.image('Images/Split-Normalize.png', caption="Splitting Data")
 st.write(""" 
 **ML Models:**
-- Random Forest: Strong classification model shown by literature review; we want to test it with our dataset
-    \n:green[**from sklearn.ensemble import RandomForestClassifier**]
-- KNN: A simple and good classification model for a low dimensionality, well-defined dataset
-    \n:green[**from sklearn.neighbors import KNeighborsClassifier**]
-- Logistic Regression: Useful for binary classification as it predicts whether a data point belongs to a category 
-    \n:green[**from sklearn.linear_model import LogisticRegression**]       
+- We used logistic regression for our first model because it is a relatively simple model that is good for binary classification. The model assumes that the data is linearly separable and that there is a linear relationship, so it serves as a simple, interpretable model for binary classification. 
+Logistic regression uses the sigmoid functions which handles the decision boundary, so that is why it is good for binary classification. Also, logistic regression is good for a dataset with fewer features and can be combined with regularization to prevent overfitting. 
+Since this is a relatively simple model to implement, we decided it would be good to use as our first model because it is simple to understand and will serve as a benchmark for future models.   
 """)
+st.image('Images/Model.png', caption="Logistic Regression")
 
-st.subheader('(Potential) Results and Discussion')
+st.subheader('Results and Discussion')
 st.write(":heavy_minus_sign:"*19)
 st.write("""
-We plan to use accuracy, precision, and recall as our metrics to evaluate our model.
-
-- Accuracy is one of the most important and useful metrics for a classification model, given that a data set is balanced, as it provides a quick, simple evaluation of the overall performance
-
-- Precision refers to the proportion of true positive classified given what was classified as positive (true positives and false positives)
-
-- Recall shows whether a model correctly identifies true positive instances given all the actual positive instances, which are true positives and false negatives.
-
-Recall and precision work well together to ensure that a model is able to identify and classify try positive instances. 
-         Accuracy is a helpful, standard metric, so a combination of these three metrics will reliably evaluate the performance of our models given our dataset.
-
-Each metric is expected to be at least 85% for our models, and we expect the random forest model to perform the best [3].
-
+In our proposal, we wanted each metric to be at least 85% for our models, and we achieved that with logistic regression. For our initial results, we tested not removing outliers, using all features, and using a label encoder. 
+As can be seen in the figure, we achieved 
+        - 88.36% Accuracy
+        - 87.02% Precision
+        - 90.17% Recall
+        - 88.57% F1 Score
+    Our confusion matrix can be seen below, as well, and it shows that our model did a relatiely good job idnetifying true positive and false negatives. Our model performed well because we used a balanced dataset, encoded the categorical features, and split and normalized the data. Logistic regression does well with binary classification, which is why we saw good results. We didn't see amazing results because logistic regression is one of the simpler models.
 """)
+st.image("Images/Normal Results.png", caption = "Basline Results")
+st.write("""
+         When we tried to remove the outliers in our dataset, we saw that our accuracy, precision, recall, and F1 all decreased. There are many possible explanations for this; one being that we might have removed outliers in the wrong way, especially for our specific data set.
+         Our dataset can be considered as relatively small, so removing outliers results in less data points and training data for our model to use. Additionally, the outliers may have been informatiove data points that reflect importnat variability in the data, which could have influenced the decision boundary as well.
+         Outliers also represent edge cases or rare cases that are present in the real world, so removing them might make the model less generalizable to unseen data, especially if the outliers were meaningful data points.
+         """)
+st.image("Images/Removing Outlier Results.png", caption = "Outlier Results")
+st.write("""
+        Going off of the results of PCA, if we removed the 'Plx', 'e_Plx', and Spectral Type features from the dataset, we found that the our performance metrics only slightly decreased. Although there are slight changes in performance, we are decreaseing the dimensionality of our dataset by removing three features, and we are getting basically the same accuracy, precision, and recall.
+        This is good because it shows that our model is not relying on these features to make predictions, and it can still make accurate predictions without them.
+         """)
+st.image("Images/PCA.png", caption = "PCA Results")
+st.write("""
+        Finally, we wanted to see the differences in performance if we used label encoding by one hot encoding. We found that one hot encoding had a slightly lower precision score, but slightly higher f1 and recall score.
+        However, using one hot encoding makes the most sense because it is used for categorical features that are not ordinal or don't have an inheret ordering, and it is better for our model to train on.
+         """)
+st.image("Images/One Hot Encoder.png", caption = "One Hot Encoding Results")
+
+st.write("""
+        Overall, our model performed well as every metric was above 85%, and we were able to see how different preprocessing methods affected our model's performance. We only used the default parameters for logistic regression, so the results may not have been the best they could've been. Some next steps include using a grid serach to optimize the hyperparameters and implemengint other models in the same fashion to compare which model performs the best.
+         """)
+
 
 st.subheader('References')
 st.write(":heavy_minus_sign:"*6)
