@@ -79,6 +79,7 @@ st.write("""
 st.image('Images/Split-Normalize.png', caption="Splitting Data")
 st.write(""" 
 **ML Models:**
+
 We used logistic regression for our first model because it is a relatively simple model that is good for binary classification. The model assumes that the data is linearly separable and that there is a linear relationship, so it serves as a simple, interpretable model for binary classification. 
 
 Logistic regression uses the sigmoid functions which handles the decision boundary, so that is why it is good for binary classification. Also, logistic regression is good for a dataset with fewer features and can be combined with regularization to prevent overfitting. 
@@ -87,9 +88,18 @@ Since this is a relatively simple model to implement, we decided it would be goo
 """)
 st.image('Images/Model.png', caption="Logistic Regression")
 
+st.write("""
+The second model used was random forest classification. As an extension of the decision tree model, it consists of branching nodes separated via thresholds of certain feature values. Randomness is introduced from using random subsets of data to evaluate which features to partition from. 
+
+While this model is suitable for highly accurate binary classifications, it can also be very computationally intensive to run. It also has many hyperparameters that can be tuned to alter its efficiency. The ones we have chosen to callibrate are the number of estimators, the maximum depth, and the max percentage of features to pull from. 
+""")
+st.image('Images/RF_Model.png', caption="Random Forest Classification")
+
 st.subheader('Results and Discussion')
 st.write(":heavy_minus_sign:"*19)
 st.write("""
+**Logistic Regression:**
+
 In our proposal, we wanted each metric to be at least 85% for our models, and we achieved that with logistic regression. For our initial results, we tested not removing outliers, using all features, and using a label encoder. 
 As can be seen in the figure, we achieved:""") 
 st.write("- 88.36% Accuracy")
@@ -132,6 +142,42 @@ st.write("""
          
         Some next steps include using a grid search to optimize the hyperparameters and implementing other models in the same fashion to compare which model performs the best. We can also use ensemble learning or boosting which incorporates multiple models.
          """)
+
+st.write("""
+**Random Forest Classification:**
+
+For our random forest classification model produced fairly accurate results, as seen below. This model was tested with the default hyperparameters provided by sklearn and one hot encoding. It crosses over the 85% threshold sought after.
+""")
+st.image("Images/RF_Results_Default.png", caption = "Random Forest Base Results")
+
+
+st.write("""
+There are more values we can adjust to further increase the efficiency of the model. For one, we found that swapping back to label encoding over one hot encoding resulted in an increase in performace across the board, as seen below. This increase in performace is still apparent in future changes made to the model's values.
+
+This could be perhaps due to random forest tree's model fitting better to label encoding's categorical values rather than one hot encodings feature values.
+""")
+st.image("Images/RF_Results_LE.png", caption = "Random Forest w/ Label Encoding")
+
+
+st.write("""
+The model can be further improved by finding specific hyperparameter values that better fit the given dataset. As mentioned before, the hyperparameters we will be attempting to tune are the number of estimators, maximum depth, and the percentage of features to use.
+
+Given the range and amount of hyperparameters to determine, finding the optimal combination can be an tedious and extraneous process. As such, we will be utilizing sklearn's RandomizedSearchCV model to search for it. It runs via testing random sets of hyperparameter values, and returns the combination with the highest accuracy.
+
+We then used the hyperparameters provided by the search to set intial values for the random forest model.
+""")
+st.image("Images/RF_RandomizedSearch.png", caption = "RandomizedSearchCV")
+st.image("Images/RF_Hyperparameters.png", caption = "RandomizedSearchCV Results")
+
+
+st.write("""
+When running the model with these new hyperparameters, we see a substantial increase in performance in accuracy, precision, recall, and F1 scores. This is likely due to the new hyperparameters scaling better with larger values and ranges. Compared to the default values, with values relatively smaller, the new values fit better for larger datasets.
+
+""")
+st.image("Images/RF_Results_Tuned.png", caption = "Random Forest w/ Hyperparameter Tuning")
+
+
+
 
 
 st.subheader('References')
