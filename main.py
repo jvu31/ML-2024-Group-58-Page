@@ -216,6 +216,9 @@ Furthermore, the time that it took to tune the hyperparameters and then train th
 In terms of binary star classification, we would be better of using a different model.
 """)
 
+st.subheader('Conclusion')
+st.write(":heavy_minus_sign:"*7)
+
 
 
 st.subheader('References')
