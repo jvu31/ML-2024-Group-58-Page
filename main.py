@@ -193,7 +193,7 @@ st.write("""
 The default linear SVM classifier produced similar initial results as the random forest model, which is a decent result for this version of SVM which runs the fastest.
 """)
 st.image("Images/SVM_Model_Results.png", caption = "Linear SVM Results")
-st.image("Images/SVM_Model_CM.png", captino = "Linear SVM Confusion Matrix")
+st.image("Images/SVM_Model_CM.png", caption = "Linear SVM Confusion Matrix")
 
 st.write("""
 We can rely on the results from previous models as evidence that Label Encoding is better than One-Hot Encoding, so we can immediately try to tune the parameters to attempt to gain even better performance.
@@ -218,6 +218,7 @@ In terms of binary star classification, we would be better of using a different 
 
 st.subheader('Conclusion')
 st.write(":heavy_minus_sign:"*7)
+
 
 
 
