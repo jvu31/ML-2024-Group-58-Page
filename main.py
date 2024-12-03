@@ -4,11 +4,11 @@ import pandas as pd
 
 contributions = pd.DataFrame (
     [
-        {"Name": "Jimmy", "Contributions": "Pre-processing Data"},
-        {"Name": "Carlos", "Contributions": "Visualizing Data"},
-        {"Name": "Omo", "Contributions": "Pre-processing Data"},
-        {"Name": "Shrenik", "Contributions": "Model Implementation and Write-Up"},
-        {"Name": "Jerry", "Contributions": "Model Implementation and Write-Up"}
+        {"Name": "Jimmy", "Contributions": "Random Forest Model and Write-Up"},
+        {"Name": "Carlos", "Contributions": "Linear SVM Model and Write-Up"},
+        {"Name": "Omo", "Contributions": "Put Slides Together"},
+        {"Name": "Shrenik", "Contributions": "Conclusion Write-Up and Video Recordign"},
+        {"Name": "Jerry", "Contributions": "Put Slides Together"}
     ]
 )
 st.set_page_config(page_title='Star Classification Project', page_icon ="🌟", layout = "centered")
