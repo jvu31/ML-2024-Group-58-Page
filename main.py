@@ -95,6 +95,14 @@ While this model is suitable for highly accurate binary classifications, it can 
 """)
 st.image('Images/RF_Model.png', caption="Random Forest Classification")
 
+st.write("""
+The third and final model we used to solve the classification problem is a Support Vector Machine (SVM). The idea is that this model can project the data into a higher-dimensional space where the classes become linearly separable.
+
+Other advantages of using SVM are the ability to tune various hyperparameters to improve the model's performance (such as choosing different kernel types and kernel coefficients), and the option to include a regularization term so that we don't overfit the data.
+
+However, since the optimization problem for this model grows quadratically with the dataset size, tuning and running SVM can be very expensive computationally and take a relatively long time compared to other simpler models.
+"""
+
 st.subheader('Results and Discussion')
 st.write(":heavy_minus_sign:"*19)
 st.write("""
