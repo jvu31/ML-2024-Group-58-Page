@@ -187,7 +187,34 @@ When running the model with these new hyperparameters, we see a substantial incr
 """)
 st.image("Images/RF_Results_Tuned.png", caption = "Random Forest w/ Hyperparameter Tuning")
 
+st.write("""
+**SVM Classifier:**
 
+The default linear SVM classifier produced similar initial results as the random forest model, which is a decent result for this version of SVM which runs the fastest.
+""")
+st.image("Images/SVM_Model_Results.png", caption = "Linear SVM Results")
+st.image("Images/SVM_Model_CM.png", captino = "Linear SVM Confusion Matrix")
+
+st.write("""
+We can rely on the results from previous models as evidence that Label Encoding is better than One-Hot Encoding, so we can immediately try to tune the parameters to attempt to gain even better performance.
+
+Shown below is the entire hyperparameter space that was tested to see which combination performed better.
+""")
+st.image("Images/SVM_Tuned.png", caption = "SVM Hyperparameter Tuning")
+
+st.write("""
+After finding the best SVM parameters, we trained a new model to see how it compared to the previous linear SVM.
+""")
+st.image("Images/SVM_Tuned_Results.png", caption = "Tuned SVM Results")
+st.image("Images/SVM_Tuned_CM.png", caption = "Tuned SVM Confusion Matrix")
+
+st.write("""
+As you might observe, in this situation, tuning the hyperparameters from the ones we chose only improved performance by a near-negligible amount.
+
+Furthermore, the time that it took to tune the hyperparameters and then train the model was too long for the results we obtained.
+
+In terms of binary star classification, we would be better of using a different model.
+""")
 
 
 
