@@ -151,7 +151,6 @@ st.write("""
          
         We can attribute the model's success to the nature of the classification and the data pre-processing. We only used the default parameters for logistic regression, so the results may not have been the best they could've been. 
          
-        Some next steps include using a grid search to optimize the hyperparameters and implementing other models in the same fashion to compare which model performs the best. We can also use ensemble learning or boosting which incorporates multiple models.
          """)
 
 st.write("""
@@ -218,9 +217,15 @@ In terms of binary star classification, we would be better of using a different 
 
 st.subheader('Conclusion')
 st.write(":heavy_minus_sign:"*7)
-
-
-
+st.write("We have incorporated GridSearchCV and RandomizedSearchCV to tune the hyperparameters of our models, which has helped us achieve better results.")
+st.write("The Random Forest model has higher performance metrics and more concentrated true positive/negatives in the confusion matrix")
+st.write("One reason that the Random Forest performed the best could be that the classification involved more complex, non-linear boundaries. Random Forests are known to be good at handling more complex, non-linear data since they are a collection of decision trees.")
+st.write("Random Forests are also good at handling outliers and extreme values because the individual trees help average out the noise.")
+st.write("Another reason could be that the Random Forest model was able to capture the interactions between the features better than the other models.")
+st.write("The Linear Regression and SVM Models may have assumed a linear decision boundary or separability which may not be ideal for this calssification. These models were sensitive to outliers and could not capture the complex, non-linear feature relationship as well as random forest.")
+st.write("Although the random forest model performed the best, it is important to note that it is less interpretable, uses more memory and computational reosources, and the time to predict increases with the number of trees. Overall, it is more complex and computationally intensive compared to the other models.")
+st.write("Linear Regression and SVM are relatively simple to implement and explain, especially from scratch. They are less copmutationally expensive, require lower memory, and have relatively faster prediction times, compared to Random Forest.")
+st.write("However, as we have seen, they don't proide the best results for this classification problem, which was expected as we predicted Random Forest to perform the best, initially.")
 
 st.subheader('References')
 st.write(":heavy_minus_sign:"*6)
