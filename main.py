@@ -222,9 +222,9 @@ st.write("The Random Forest model has higher performance metrics and more concen
 st.write("One reason that the Random Forest performed the best could be that the classification involved more complex, non-linear boundaries. Random Forests are known to be good at handling more complex, non-linear data since they are a collection of decision trees.")
 st.write("Random Forests are also good at handling outliers and extreme values because the individual trees help average out the noise.")
 st.write("Another reason could be that the Random Forest model was able to capture the interactions between the features better than the other models.")
-st.write("The Linear Regression and SVM Models may have assumed a linear decision boundary or separability which may not be ideal for this calssification. These models were sensitive to outliers and could not capture the complex, non-linear feature relationship as well as random forest.")
+st.write("The Logistic Regression and SVM Models may have assumed a linear decision boundary or separability which may not be ideal for this calssification. These models were sensitive to outliers and could not capture the complex, non-linear feature relationship as well as random forest.")
 st.write("Although the random forest model performed the best, it is important to note that it is less interpretable, uses more memory and computational reosources, and the time to predict increases with the number of trees. Overall, it is more complex and computationally intensive compared to the other models.")
-st.write("Linear Regression and SVM are relatively simple to implement and explain, especially from scratch. They are less copmutationally expensive, require lower memory, and have relatively faster prediction times, compared to Random Forest.")
+st.write("Logistic Regression and SVM are relatively simple to implement and explain, especially from scratch. They are less computationally expensive, require lower memory, and have relatively faster prediction times, compared to Random Forest.")
 st.write("However, as we have seen, they don't proide the best results for this classification problem, which was expected as we predicted Random Forest to perform the best, initially.")
 
 st.subheader('References')
